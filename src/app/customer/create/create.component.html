@@ -1,0 +1,23 @@
+<div class="form-wrapper mx-auto">
+    <h2 >Customer Create</h2>
+    <form [formGroup]="customerForm" class="d-flex justify-content-center align-items-center flex-wrap p-4">
+
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="name" placeholder="Enter Your name">
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Enter Your Email">
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>phone</mat-label>
+          <input type="text" matInput formControlName="phone" placeholder="Enter Your phone">
+        </mat-form-field>
+
+        <a  mat-raised-button color="primary" (click) = "createCustomer()">Create</a>
+      
+      </form>
+</div>

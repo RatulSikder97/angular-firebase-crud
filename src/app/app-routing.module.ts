@@ -13,15 +13,19 @@ import { AuthGuard } from './services/auth.guard';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
-    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'forgot-password', component: ForgotPasswordComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent },
-    { path: 'verify-email', component: VerifyEmailComponent },
-    { path: '**', component: HomeComponent },                       // catch-all in case no other path matched
+    { path: '', redirectTo: 'customer', pathMatch: 'full' },
+    // { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+    // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    // { path: 'forgot-password', component: ForgotPasswordComponent },
+    // { path: 'home', component: HomeComponent },
+    // { path: 'login', component: LoginComponent },
+    // { path: 'signup', component: SignupComponent },
+    // { path: 'verify-email', component: VerifyEmailComponent },
+    // { path: '**', component: HomeComponent },    
+    {
+      path: '', 
+      loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
+    },                   // catch-all in case no other path matched
 ];
 
 

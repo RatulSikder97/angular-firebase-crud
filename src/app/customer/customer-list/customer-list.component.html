@@ -1,0 +1,14 @@
+<h2>Customer List</h2>
+
+<div *ngIf="$customer | async as customer">
+  <div class="card border-primary w-50 m-4" *ngFor="let item of customer">
+    <div class="card-header">
+      <h2>Customer info</h2>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Name: {{item.name}}</p>
+      <p class="card-text">Name: {{item.email}}</p>
+      <p class="card-text">Name: {{item.phone}}</p>
+    </div>
+  </div>
+</div>
